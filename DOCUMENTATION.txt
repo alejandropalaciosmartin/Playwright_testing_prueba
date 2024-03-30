@@ -1,0 +1,32 @@
+-------- DOCUMENTACION PLAYWRIGHT --------
+
+- ¿Que necesitamos para utilizar Playwright?
+    -> npm (node package manager) ❌
+    -> Node (execution enviroment) ❌
+    -> Visual Studio Code (IDE) ❌
+    
+
+Vamos a partir de que no tenemos nada de lo anterior, asi que vamos a ir poco a poco.
+
+1️⃣ -> Primero necesitamos el 'npm'. Para ello nos vamos a la siguiente página (https://nodejs.org/en/download), descargamos node, y cabe recalcar que el instalador también lleva el gestor de paquetes Node.js (npm) dentro de él. Esto significa que no necesitas instalar el npm por separado. Así que nos quitamos dos pasos del tirón.
+
+    -> npm (node package manager) ✔️
+    -> Node (execution enviroment) ✔️
+
+Para comprobar que se ha instalado bien tanto 'npm', como 'node', podemos abrir la consola de comandos y ejecutar 'node -v' y 'npm -v'.
+
+2️⃣ -> Después, instalamos Visual Studio Code desde el siguiente enlace: https://code.visualstudio.com/download. Tenemos que instalar este IDE y no otro porque más adelante veremos que Visual Studio Code tiene pl-> Javascript (programming language) ❌
+    -> Playwright (npm package) ❌
+    -> Playwright Test for VSCode (plugin) ❌ugins de Playwright integrados que nos van a facilitar la vida a la hora de ejecutar tests.
+
+    -> Visual Studio Code (IDE) ✔️
+
+3️⃣ -> El lenguaje Javascript, es el que vamos a utilizar para generar los scripts para los test, asi que no hay que instalar nada, lo que si hay que instalar es el plugin de Playwright en Visual Studio Code. Para ello nos vamos, en VSCode, al apartado de Extensiones (Ctrl+Mayús+X) y en el buscador ponemos 'Playwright Test for VSCode' y lo instalamos'
+
+    -> Javascript (programming language) ✔️
+    -> Playwright Test for VSCode (plugin) ✔️
+
+4️⃣ -> Por último, solo nos falta isntalar el paquete de Playwright con npm. Para ello creamos una carpeta en el lugar que deseemos (es la carpeta donde vamos a hacer nuestros scripts), abrimos la carpeta en VSCode (estará vacía obviamente) y abrimos una consola de comandos de la carpeta (Ctrl+Ñ). Escribimos el siguiente comando (( npm init playwright@latest )). Acontinuación, aparecera una serie de pasos:
+    ▶️ Primero preguntará si queremos proceder a instalar Playwright, le decimos que si (poner una 'y')
+    ▶️ En el siguiente paso nos pregunta que lenguaje queremos utilizar, en nuestro caso ponemos TypeScript
+    ▶️ En los siguientes pasos: dejamos el nombre por defecto de 'tests', en el siguiente ponemos false y en el ultimo ponemos true (el ultimo paso es para instalar internamente todo los navegadores para no tener problemas al hacer testing)
