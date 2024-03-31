@@ -1,18 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('test prueba', async ({ page }) => {
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  //ABRIR UNA PAGINA
+  await page.goto('https://www.mercadolibre.com.co');
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  //BUSCAR UN INPUT Y DESPUES RELLENARLO
+  await page.locator('input[id=\'cb1-edit\']').fill('Iphone');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  //INTERACTUAR CON EL TECLADO
+  await page.keyboard.press('Enter');
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  //ESPERA A QUE CARGUE LA PAGINA HASTA QUE EL ELEMENTO SEA VISIBLE
+  await expect(page.locator('//ol[contains(@class, \'ui-search-layout\')]')).toBeVisible();
+
+  //PAUSA LA EJECUCION DEL TEST
+  await page.pause();
 });

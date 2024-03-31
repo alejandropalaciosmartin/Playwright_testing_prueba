@@ -4,6 +4,9 @@
     -> npm (node package manager) ❌
     -> Node (execution enviroment) ❌
     -> Visual Studio Code (IDE) ❌
+    avascript (programming language) ❌
+    -> Playwright (npm package) ❌
+    -> Playwright Test for VSCode (plugin) ❌ugins de Playwright integrados que nos van a facilitar la vida a la hora de ejecutar tests.
     
 
 Vamos a partir de que no tenemos nada de lo anterior, asi que vamos a ir poco a poco.
@@ -15,9 +18,7 @@ Vamos a partir de que no tenemos nada de lo anterior, asi que vamos a ir poco a 
 
 Para comprobar que se ha instalado bien tanto 'npm', como 'node', podemos abrir la consola de comandos y ejecutar 'node -v' y 'npm -v'.
 
-2️⃣ -> Después, instalamos Visual Studio Code desde el siguiente enlace: https://code.visualstudio.com/download. Tenemos que instalar este IDE y no otro porque más adelante veremos que Visual Studio Code tiene pl-> Javascript (programming language) ❌
-    -> Playwright (npm package) ❌
-    -> Playwright Test for VSCode (plugin) ❌ugins de Playwright integrados que nos van a facilitar la vida a la hora de ejecutar tests.
+2️⃣ -> Después, instalamos Visual Studio Code desde el siguiente enlace: https://code.visualstudio.com/download. Tenemos que instalar este IDE y no otro porque más adelante veremos que Visual Studio Code tiene plugins que nos hace mas facil el trabajar con Playwright-> 
 
     -> Visual Studio Code (IDE) ✔️
 
@@ -30,3 +31,21 @@ Para comprobar que se ha instalado bien tanto 'npm', como 'node', podemos abrir 
     ▶️ Primero preguntará si queremos proceder a instalar Playwright, le decimos que si (poner una 'y')
     ▶️ En el siguiente paso nos pregunta que lenguaje queremos utilizar, en nuestro caso ponemos TypeScript
     ▶️ En los siguientes pasos: dejamos el nombre por defecto de 'tests', en el siguiente ponemos false y en el ultimo ponemos true (el ultimo paso es para instalar internamente todo los navegadores para no tener problemas al hacer testing)
+
+    -> Playwright (npm package) ✔️
+
+
+Ya tenemos todo configurado para poder comenzar!! 🥳👌
+
+----------------------------------------------------------------------------------------------------
+
+-------- PRIMEROS TESTS CON PLAYWRIGHT --------
+
+➡️ Por defecto nos creas una carpeta llamada tests, con un archivo con dos test muy sencillos (en esa carpeta es donde vamos a escribir nuestros tests) y otra carpeta llamada 'tests-examples' (está la vamos a borrar ya que no nos hace falta para nada). 
+
+➡️ Entramos a la carpeta tests y vamos a ver que tiene el archivo 'example.specs.ts'. Como podemos ver tiene dos tests (cada vez que veamos la palabra "test" abriendo parentesis, quiere decir que ahí dentro hay un test). Para ejecutar los tests, abrimos la consola de comandos (Ctrl+Ñ) y ejecutamos el siguiente comando -> (( npx playwright test )) (Este comando ejecutara todos los tests que haya en la carpeta tests sin excepción alguna)
+
+✔️ -> Si sale '6 passed' quiere decir que ha salido todo bien
+❌ -> Al contrario, si sale algun error, este aparecera en rojo y habra que revisar el codigo
+
+    En cualquiera de los dos casos anteriores, la consola de comandos nos sugiere que ejecutemos el siguiente comando: npx playwright show-report. Este comando es para ver paso a paso lo que ha hecho (en el caso de que tengamos algun error, nos viene de escandalo ya que podemos ver donde hemos fallado)
