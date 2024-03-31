@@ -16,4 +16,13 @@ test('test prueba', async ({ page }) => {
 
   //PAUSA LA EJECUCION DEL TEST
   await page.pause();
+
+  //GUARDAR EL TEXTO DE CADA UNO DE LOS ELEMENTOS EN UNA VARIABLES PARA DESPUES MOSTRARLOS POR CONSOLA
+  const titles = await page.locator('//ol[contains(@class, \'ui-search-layout\')]/li//h2').allInnerTexts()
+
+  console.log('TOTAL DE ELEMENTOS ENCONTRADOS: ' + titles.length);
+  for (let title = 0; title < titles.length; title++) {
+    console.log(titles[title]);
+  }
+  await page.pause();
 });
