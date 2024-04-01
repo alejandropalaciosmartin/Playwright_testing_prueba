@@ -1,4 +1,4 @@
--------- DOCUMENTACION PLAYWRIGHT --------
+🔵🟢---------------- DOCUMENTACION PLAYWRIGHT ----------------🔵🟢
 
 - ¿Que necesitamos para utilizar Playwright?
     -> npm (node package manager) ❌
@@ -37,9 +37,9 @@ Para comprobar que se ha instalado bien tanto 'npm', como 'node', podemos abrir 
 
 Ya tenemos todo configurado para poder comenzar!! 🥳👌
 
-----------------------------------------------------------------------------------------------------
 
--------- PRIMEROS TESTS CON PLAYWRIGHT --------
+
+🔵🟢---------------- PRIMEROS TESTS CON PLAYWRIGHT ----------------🔵🟢
 
 ➡️ Por defecto nos creas una carpeta llamada tests, con un archivo con dos test muy sencillos (en esa carpeta es donde vamos a escribir nuestros tests) y otra carpeta llamada 'tests-examples' (está la vamos a borrar ya que no nos hace falta para nada). 
 
@@ -49,3 +49,21 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
 ❌ -> Al contrario, si sale algun error, este aparecera en rojo y habra que revisar el codigo
 
     En cualquiera de los dos casos anteriores, la consola de comandos nos sugiere que ejecutemos el siguiente comando: npx playwright show-report. Este comando es para ver paso a paso lo que ha hecho (en el caso de que tengamos algun error, nos viene de escandalo ya que podemos ver donde hemos fallado)
+
+
+
+🔵🟢---------------- LOCALIZAR ELEMENTOS CON XPATH ---------------- 🔵🟢
+
+-> CÓDIGO HTML DE EJEMPLO 🔽
+    <html>
+        <head>
+        </head>
+        <body>
+            <input type="text" id="name" class="form">
+        </body>
+    </html>
+
+-> SELECTORES XPATH (ALGUNOS EJEMPLOS) 🔽
+    ▶️ //input[@type='text']
+    ▶️ //input[@id='name']
+    ▶️ //input[@class='form']
