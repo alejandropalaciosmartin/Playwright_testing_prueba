@@ -67,3 +67,43 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
     ▶️ //input[@type='text']
     ▶️ //input[@id='name']
     ▶️ //input[@class='form']
+
+-> XPATH => RELATIVE vs ABSOLUTE XPATH
+    ▶️ Absolute path: /html/head/body/div/input
+    ▶️ Relative path: //input
+
+
+
+🔵🟢---------------- LOCALIZAR ELEMENTOS CON CSS SELECTOR ---------------- 🔵🟢
+
+-> CSS Selectors
+    ▶️ input[type="text"]
+    ▶️ input[id="name"]
+    ▶️ input[class="form"]
+
+-> Shortcuts (una forma de acortar los css selector => input[id="name"] == input#name )
+    ▶️ input.form (by class)
+    ▶️ input#name (by id)
+
+
+
+🔵🟢---------------- FUNCIONES XPATH (MÁS LEGIBLE ✏️) ---------------- 🔵🟢
+
+-> 🟡getByPlaceholder: <input type="email" placeholder="name@example.com">
+    ▶️ Element type: input
+    ▶️ Properties: placeholder
+    ▶️ Value: name@example.com
+
+-> 🟡getByAltText: <img alt='Playwright logo'>
+    ▶️ Element type: img
+    ▶️ Properties: alt
+    ▶️ Value: Playwright logo
+
+-> 🟡getByRole: 🔽
+
+        <h3>Sign up</h3>
+        <label>
+            <input type="checkbox" /> Subscribe
+        </label>
+        <br/>
+        <button>Submit</button>
