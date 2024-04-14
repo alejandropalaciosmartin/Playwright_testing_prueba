@@ -107,3 +107,13 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
         </label>
         <br/>
         <button>Submit</button>
+
+
+
+🔵🟢---------------- ACTUALIZAR VERSIÓN PLAYWRIGHT ⏮️ ---------------- 🔵🟢
+
+➡️ Si nos vamos al archivo de '/package.json', hay una linea que nos dice la versión de playwright con la que estamos trabajando -> (("@playwright/test": "^1.42.1")), en este caso la 1.42.1. 
+
+➡️ Como es lógico, todas las herramientas tienes actualizaciones donde incluyen mejoras, nuevas funcionalidades, etc. En nuestro caso, para saber si hay alguna version mas nueva de la que tenemos, abrimos una nueva terminal (Ctrl+Mayús+Ñ) y escribimos el comando 'npm outdated @playwright/test'. La columna de 'Current' es la que tenemos y la columna de 'Wanted' es la que queremos, es decir, la ultima que ha salido.
+
+➡️ Para conseguir dicha version, ejecutamos en la terminal el comando 'npm install -D @playwright/test@latest'. Una vez instalada la última version de Playwright, necesitamos también actualizar la versión de los navegadores para que sean compatibles con la última versión de Playwright. Para ello ejecutamos el comando 'npx playwright install' en la terminal y podemos ver como esta instalando uno por uno la nueva version de los navegadores
