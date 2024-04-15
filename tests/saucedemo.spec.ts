@@ -9,6 +9,7 @@ test('purchase an item', async ({page}) => {
     // await page.getByRole('textbox', {name: 'Username'}).fill('standard_user') 🙆
     // await page.getByRole('textbox', {name: 'Password'}).fill('secret_sauce') 🔒
     // await page.getByRole('button', {name: 'Login'}).click() 🚀
+    // await expect(page.locator('a.shopping_cart_link')).toBeVisible() 🛒
 
 
     // --- Método nuevo 1.0 --- (no olvidar importar la clase LoginPage en la parte superior del archivo)
@@ -16,6 +17,7 @@ test('purchase an item', async ({page}) => {
     // await login.fillUsername('standard_user')
     // await login.fillPassword('secret_sauce')
     // await login.clickOnLogin()
+    // await login.checkSucessfulLogin()
 
     // --- Método nuevo 2.0 --- (no olvidar importar la clase LoginPage en la parte superior del archivo)
     const login = new LoginPage(page)
