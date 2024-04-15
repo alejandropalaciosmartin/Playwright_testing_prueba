@@ -1,12 +1,25 @@
 import {test, expect} from '@playwright/test';
+import { LoginPage } from './pageobjects/LoginPage';
 
 test('purchase an item', async ({page}) => {
 
     await page.goto('https://www.saucedemo.com/') // Ir a la página de Saucedemo 🌐
 
-    await page.getByRole('textbox', {name: 'Username'}).fill('standard_user') // Rellenar el campo de usuario 🙆
-    await page.getByRole('textbox', {name: 'Password'}).fill('secret_sauce') // Rellenar el campo de contraseña 🔒
-    await page.getByRole('button', {name: 'Login'}).click() // Hacer click en el botón de login 🚀
+    // --- Método antiguo ---
+    // await page.getByRole('textbox', {name: 'Username'}).fill('standard_user') 🙆
+    // await page.getByRole('textbox', {name: 'Password'}).fill('secret_sauce') 🔒
+    // await page.getByRole('button', {name: 'Login'}).click() 🚀
+
+
+    // --- Método nuevo 1.0 --- (no olvidar importar la clase LoginPage en la parte superior del archivo)
+    // const login = new LoginPage(page)
+    // await login.fillUsername('standard_user')
+    // await login.fillPassword('secret_sauce')
+    // await login.clickOnLogin()
+
+    // --- Método nuevo 2.0 --- (no olvidar importar la clase LoginPage en la parte superior del archivo)
+    const login = new LoginPage(page)
+    await login.loginWithCredentials('standard_user', 'secret_sauce')
 
 
     const itemsContainer = await page.locator('#inventory_container .inventory_item').all() // Seleccionar productos 🛍️
