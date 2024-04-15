@@ -117,3 +117,20 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
 ➡️ Como es lógico, todas las herramientas tienes actualizaciones donde incluyen mejoras, nuevas funcionalidades, etc. En nuestro caso, para saber si hay alguna version mas nueva de la que tenemos, abrimos una nueva terminal (Ctrl+Mayús+Ñ) y escribimos el comando 'npm outdated @playwright/test'. La columna de 'Current' es la que tenemos y la columna de 'Wanted' es la que queremos, es decir, la ultima que ha salido.
 
 ➡️ Para conseguir dicha version, ejecutamos en la terminal el comando 'npm install -D @playwright/test@latest'. Una vez instalada la última version de Playwright, necesitamos también actualizar la versión de los navegadores para que sean compatibles con la última versión de Playwright. Para ello ejecutamos el comando 'npx playwright install' en la terminal y podemos ver como esta instalando uno por uno la nueva version de los navegadores
+
+🔵🟢---------------- EJECUTAR TESTS EN MÚLTIPLES ENV. ---------------- 🔵🟢
+
+➡️ Vamos a ver como configurar nuestro 'Playwright' para ejecutar tests en diferentes ambientes (qa, dev, prod, etc), donde cada ambiente tiene una url diferente, unos datos diferentes, etc
+
+➡️ Para implementar esta nueva característica, abrimos una nueva terminar (Ctrl+Mayús+Ñ) y ejecutamos el comando 'npm i dotenv --save-dev'. Para comprobar que se ha instalado, podemos ir al archivo 'package.json' en la raíz de nuestro proyecto, y debería de aparecer una línea tal que así -> "dotenv": "^16.4.5" (con vuestra respectiva versión)
+
+➡️ Una vez descargado, vamos a ver como podemos poner en uso esta nueva herramienta. Para ello, primeramente, vamos a crear una carpeta en la raiz de nuestro proyecto que se va a llamar 'env'. Basicamente lo que vamos a guardar en esta carpeta son los diferentes 'environments' con los que vamos a trabajar, para poder guardar variables de cada uno de los environments. 
+    
+    En mi caso, en la carpeta 'env', voy a crear los archivos '.env.prod' (producción), '.env.qa
+(testing) y '.env.dev' (desarrollo). En cada uno de estos archivos voy a guardar variables especificas de cada uno.
+
+    En mi caso, en 'dev' voy a guardar la variable -> ((URL='https://dev.saucedemo.com/')), en 'qa' -> 
+((URL='https://qa.saucedemo.com/')) y en 'prod' -> ((URL='https://prod.saucedemo.com/')). Ahora solamente nos queda saber como poner en uso esta variables en nuestros scripts.
+
+➡️ Una vez definidas todas nuestras variables para cada uno de nuestros entornos, vamos a indicarle a playwright de que entorno quiero que coja las variables. Para ello nos dirigimos al archivo 'playwright.config.ts' (se encuentra en la raiz de nuestro proyecto) y donde pone -> // require('dotenv').config(); , tenemos que descomentar esa linea y dentro de los parentesis del 'config' poner esto -> 
+{ path: `.env.dev` }. De este modo cogera las variables del entorno que le indiquemos en el parametro de 'path'
