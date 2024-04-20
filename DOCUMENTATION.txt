@@ -145,6 +145,7 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
 
 
 
+
 🔵🟢---------------- COMO HACER CAPTURAS DE PANTALLA ---------------- 🔵🟢
 
 - En algún momento de la ejecución del test, seguramente necesitemos saber algun estado especifico de algun boton, desplegable o de la pagina misma. Para ello es muy útil hacer capturas de pantalla
@@ -166,3 +167,14 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
 - Podemos pasarle un parametro más a la funcion 'screenshot' (opcional), que es fullPage: true, para así poder hacer una captura a la página entera (si no se lo ponemos, solo hara a lo que este visible, si tiene scroll o mas contenido debajo no aparecerá en la captura) -> 
 
     ➡️ await page.screenshot({path: 'screenshot/login.png', fullPage: true })
+
+
+
+
+🔵🟢---------------- EJECUTAR TEST POR CONSOLA ---------------- 🔵🟢
+
+➡️ Hasta ahora, ejecutar los test ha sido tarea fácil gracias a la extesion de Playwright que nos descargamos al principio, pero... ¿y si queremos ejecutar los test en la terminal para tener un poco mas de control y ser mas detallados a la hora de ejecutarlos?
+
+➡️ Para ello, lo primero, abrimos la terminal con Ctrl+Ñ, y a continuación ponemos 'npx playwright test'. Este comando ejecutara todos los tests que esten en la carpeta 'test'
+
+➡️ Si queremos ejecutar solamente un test en especifico, ejecutamos los mismo de antes pero pasandole al final la ruta del test que queremos ejecutar
