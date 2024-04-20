@@ -147,7 +147,7 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
 
 🔵🟢---------------- COMO HACER CAPTURAS DE PANTALLA ---------------- 🔵🟢
 
-- En algún momento de la ejecución del test, seguramente necesitemos saber algun estado especifico de algun boton, desplegable o de la pagina misma. Para ello es muy útil hacer capturas de pantalla.
+- En algún momento de la ejecución del test, seguramente necesitemos saber algun estado especifico de algun boton, desplegable o de la pagina misma. Para ello es muy útil hacer capturas de pantalla
 
 - En este caso, Playwright, nos ofrece una función para poder todas las capturas que queramos en el proceso de testeo
 
@@ -155,10 +155,14 @@ Ya tenemos todo configurado para poder comenzar!! 🥳👌
 
     ➡️ await page.screenshot({path: })
 
-- En el path, debemos de poner la ruta de la carpeta donde vamos a guardas dichas capturas para poder checkearlas en un futuro. 
+- En el path, debemos de poner la ruta de la carpeta donde vamos a guardas dichas capturas para poder checkearlas en un futuro
 
 - En nuestro caso para probarlo, vamos a poner esto:
 
     ➡️ await page.screenshot({path: 'screenshot/login.png' })
 
-Esto quiere decir que la foto se guardará con el nombre de 'login.png' y se alamcenará en la carpeta 'screenshot' (creada con antelación)
+- Esto quiere decir que la foto se guardará con el nombre de 'login.png' y se alamcenará en la carpeta 'screenshot'
+
+- Podemos pasarle un parametro más a la funcion 'screenshot' (opcional), que es fullPage: true, para así poder hacer una captura a la página entera (si no se lo ponemos, solo hara a lo que este visible, si tiene scroll o mas contenido debajo no aparecerá en la captura) -> 
+
+    ➡️ await page.screenshot({path: 'screenshot/login.png', fullPage: true })
